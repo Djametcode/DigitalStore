@@ -36,7 +36,7 @@ const Extends = ({ data }) => {
       <div>
         {/* <ImageProducts data={images} /> */}
         <div className=" flex justify-center pt-2">
-          <div className=" w-28 h-28 bg-cover bg-dummy rounded-lg"></div>
+          <div className=" w-36 h-36 bg-cover bg-dummy rounded-lg"></div>
         </div>
       </div>
 
@@ -58,7 +58,9 @@ const Extends = ({ data }) => {
 const Products = ({ data }) => {
   const result = data.map((item) => <Extends data={item} key={data._id} />);
   return (
-    <div className=" flex justify-start ml-6 flex-wrap m-2 gap-3">{result}</div>
+    <div className=" flex justify-start w-full flex-wrap m-2 gap-3">
+      {result}
+    </div>
   );
 };
 
