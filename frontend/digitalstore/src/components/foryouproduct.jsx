@@ -40,7 +40,7 @@ const Extends = ({ data }) => {
         </div>
       </div>
 
-      <div className=" flex flex-col text-left pl-3 w-40 text-sm">
+      <div className=" flex flex-col text-left pl-3 text-sm">
         <p>{title}</p>
         <p>Rp. {price}</p>
       </div>
@@ -58,7 +58,7 @@ const Extends = ({ data }) => {
 const Products = ({ data }) => {
   const result = data.map((item) => <Extends data={item} key={data._id} />);
   return (
-    <div className=" flex justify-start flex-wrap m-2 gap-3">{result}</div>
+    <div className=" flex justify-start ml-6 flex-wrap m-2 gap-3">{result}</div>
   );
 };
 
