@@ -36,7 +36,7 @@ const Extends = ({ data }) => {
       <div>
         {/* <ImageProducts data={images} /> */}
         <div className=" flex justify-center pt-2">
-          <div className=" w-36 h-36 bg-cover bg-dummy rounded-lg"></div>
+          <div className=" w-40 h-44 bg-cover bg-dummy rounded-lg"></div>
         </div>
       </div>
 
