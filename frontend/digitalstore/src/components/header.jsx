@@ -25,11 +25,11 @@ const Search = () => {
 };
 const Header = () => {
   return (
-    <div className=" bg-slate-500 text-white p-4 flex justify-start gap-5">
+    <div className=" bg-slate-500 text-white p-2 flex justify-between gap-5">
       <div className=" flex flex-col justify-center">
         <h1 className=" text-xl font-jost text-left">Digital Store</h1>
       </div>
-      <div className=" flex justify-center gap-3 translate-x-6">
+      <div className=" flex justify-center gap-3">
         <Search />
         <div className=" flex flex-col justify-center">
           <Chart />
