@@ -25,9 +25,11 @@ const ForYou = () => {
   return (
     <div className=" font-quick bg-slate-500 text-white">
       <h1 className=" p-3 text-l">Rekomendasi Produk</h1>
-      <ProductContext.Provider value={{ products, setProducts }}>
-        <ProductLists />
-      </ProductContext.Provider>
+      <div className=" flex justify-center">
+        <ProductContext.Provider value={{ products, setProducts }}>
+          <ProductLists />
+        </ProductContext.Provider>
+      </div>
     </div>
   );
 };
