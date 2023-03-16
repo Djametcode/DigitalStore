@@ -33,7 +33,7 @@ const Extends = ({ data }) => {
       onClick={handleClick}
       className=" bg-slate-600 rounded-lg gap-3 flex flex-col p-4 text-center justify-end cursor-pointer"
     >
-      <div className=" flex flex-col justify-center">
+      <div className="">
         {/* <ImageProducts data={images} /> */}
         <div className=" flex justify-center pt-2">
           <div className=" w-40 h-40 bg-cover bg-dummy rounded-lg"></div>
@@ -57,11 +57,7 @@ const Extends = ({ data }) => {
 
 const Products = ({ data }) => {
   const result = data.map((item) => <Extends data={item} key={data._id} />);
-  return (
-    <div className=" flex justify-items-center pl-2 flex-wrap p-2 gap-2">
-      {result}
-    </div>
-  );
+  return <div className=" grid grid-cols-2 gap-2 m-2">{result}</div>;
 };
 
 const ProductLists = () => {
