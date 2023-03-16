@@ -5,7 +5,7 @@ import Menu from "./menu";
 
 const DigitalStore = () => {
   return (
-    <div>
+    <div className=" sm:hidden">
       <div className=" sticky top-0 z-20">
         <Header />
       </div>
