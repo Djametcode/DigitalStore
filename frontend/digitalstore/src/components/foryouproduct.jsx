@@ -44,20 +44,13 @@ const Extends = ({ data }) => {
         <p>{title}</p>
         <p>Rp. {price}</p>
       </div>
-      {detail && (
-        <DetailProducts
-          cursor={setCursor}
-          data={data}
-          onClicks={toggleDetail}
-        />
-      )}
     </div>
   );
 };
 
 const Products = ({ data }) => {
   const result = data.map((item) => <Extends data={item} key={data._id} />);
-  return <div className=" grid grid-cols-2 gap-2 m-2">{result}</div>;
+  return <div className=" grid grid-cols-2 gap-2 m-2 pb-16">{result}</div>;
 };
 
 const ProductLists = () => {
