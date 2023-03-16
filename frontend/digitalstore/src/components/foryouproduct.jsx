@@ -58,7 +58,7 @@ const Extends = ({ data }) => {
 const Products = ({ data }) => {
   const result = data.map((item) => <Extends data={item} key={data._id} />);
   return (
-    <div className=" flex justify-items-center flex-wrap p-2 gap-2">
+    <div className=" flex justify-items-center pl-2 flex-wrap p-2 gap-2">
       {result}
     </div>
   );
