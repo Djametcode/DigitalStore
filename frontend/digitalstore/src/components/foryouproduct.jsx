@@ -33,7 +33,7 @@ const Extends = ({ data }) => {
       onClick={handleClick}
       className=" bg-slate-600 rounded-lg gap-3 flex flex-col p-4 text-center justify-end cursor-pointer"
     >
-      <div>
+      <div className=" flex flex-col justify-center">
         {/* <ImageProducts data={images} /> */}
         <div className=" flex justify-center pt-2">
           <div className=" w-40 h-40 bg-cover bg-dummy rounded-lg"></div>
