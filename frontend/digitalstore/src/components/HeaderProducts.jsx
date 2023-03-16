@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Chart = () => {
   return (
     <div>
@@ -32,8 +34,9 @@ const HeaderProducts = () => {
     <div className=" bg-slate-500 text-white p-4 flex justify-between gap-5">
       <div className=" flex flex-col justify-center">
         <Link
-          className=" font-jost bg-slate-400 text-slate-100 rounded-xl w-16 p-1"
+          className=" font-jost bg-slate-400 text-slate-100 rounded-xl w-16 p-1 text-center"
           onclick={closeDetail}
+          to="/"
         >
           Back
         </Link>
