@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../header";
 import Navigator from "../navigator";
 
@@ -55,18 +55,26 @@ const Register = () => {
     }
   };
   return (
-    <div>
-      <form className=" flex flex-col gap-2 font-jost" action="#">
+    <div className=" flex flex-col gap-5">
+      <div>
+        <Link to="/profile" className=" bg-base-200 p-2 rounded-xl">
+          Kembali ke login
+        </Link>
+      </div>
+      <form
+        className=" bg-base-200 p-5 rounded-lg flex flex-col gap-2 font-jost"
+        action="#"
+      >
         <div className=" flex gap-2">
           <input
-            className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none w-full focus:text-white text-white"
+            className=" bg-base-300 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none w-full focus:text-white text-white"
             type="text"
             placeholder="First Name"
             ref={firstNameRef}
             onChange={handleChange}
           />
           <input
-            className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none w-full focus:text-white text-white"
+            className=" bg-base-300 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none w-full focus:text-white text-white"
             type="text"
             placeholder="Last Name"
             ref={lastNameRef}
@@ -74,39 +82,39 @@ const Register = () => {
           />
         </div>
         <input
-          className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
+          className=" bg-base-300 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
           type="text"
           placeholder="Email"
           ref={emailRef}
           onChange={handleChange}
         />
         <input
-          className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
+          className=" bg-base-300 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
           type="text"
           placeholder="No Hp"
           ref={phoneRef}
           onChange={handleChange}
         />
         <input
-          className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
+          className=" bg-base-300 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
           type="text"
           placeholder="Password"
           ref={passwordRef}
           onChange={handleChange}
         />
       </form>
-      <div>
-        {txt && (
-          <p className=" bg-slate-500/40 text-center p-2 rounded-lg">
-            {result}
-          </p>
-        )}
-      </div>
 
       <div className=" flex justify-center pt-2">
+        <div>
+          {txt && (
+            <p className=" bg-slate-500/40 text-center p-2 rounded-lg">
+              {result}
+            </p>
+          )}
+        </div>
         <button
           onClick={registerUser}
-          className=" font-jost bg-slate-500/40 p-1 rounded-lg text-white/70"
+          className=" font-jost bg-base-300 p-2 rounded-lg text-white/70"
         >
           Registrasi
         </button>
@@ -118,7 +126,9 @@ const Register = () => {
 const WrapperRegister = () => {
   return (
     <div>
-      <Header />
+      <div className=" sticky top-0">
+        <Header />
+      </div>
       <div className=" m-3">
         <Register />
       </div>

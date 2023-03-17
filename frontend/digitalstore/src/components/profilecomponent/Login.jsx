@@ -56,14 +56,14 @@ const Login = () => {
     <div className=" font-quick p-3 m-2 w-72 flex flex-col gap-2">
       <form className=" flex flex-col gap-2" action="#">
         <input
-          className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
+          className=" bg-base-100 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
           type="text"
           placeholder="Email"
           ref={emailRef}
           onChange={handleChange}
         />
         <input
-          className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
+          className=" bg-base-100 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
           type="text"
           placeholder="Password"
           ref={passRef}

@@ -22,7 +22,7 @@ const NavigatorLoggedUser = () => {
         </div>
       </Link>
       <Link
-        to="/chat_logged"
+        // to="/profile_logged"
         className=" w-full p-2 flex justify-center bg-slate-600"
       >
         <div className=" flex flex-col justify-center font-quick">

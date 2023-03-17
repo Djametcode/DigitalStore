@@ -1,8 +1,8 @@
 const Menu = () => {
   return (
-    <div className=" flex flex-col gap-5 bg-gradient-to-br from-slate-800 to-slate-500 font-quick">
+    <div className=" flex flex-col gap-5 bg-base-300 font-quick">
       <div className=" flex justify-around text-center mt-5">
-        <div className=" text-slate-200 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
+        <div className=" text-slate-200 hover:bg-base-100 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
           <div className=" flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ const Menu = () => {
             <p className=" text-xs">Pulsa</p>
           </div>
         </div>
-        <div className=" text-slate-200 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
+        <div className=" text-slate-200 hover:bg-base-100 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
           <div className=" flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ const Menu = () => {
             <p className=" text-xs">Kuota</p>
           </div>
         </div>
-        <div className=" text-slate-200 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
+        <div className=" text-slate-200 hover:bg-base-100 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
           <div className=" flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const Menu = () => {
             <p className=" text-xs">PDAM</p>
           </div>
         </div>
-        <div className=" text-slate-200 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
+        <div className=" text-slate-200 hover:bg-base-100 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
           <div className=" flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ const Menu = () => {
             <p className=" text-xs">Listrik</p>
           </div>
         </div>
-        <div className=" text-slate-200 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
+        <div className=" text-slate-200 hover:bg-base-100 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
           <div className=" flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ const Menu = () => {
         </div>
       </div>
       <div className=" flex justify-start text-center ml-2 gap-3 mb-5">
-        <div className=" text-slate-200 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
+        <div className=" text-slate-200 hover:bg-base-100 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
           <div className=" flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +120,7 @@ const Menu = () => {
             <p className=" text-xs">Jual</p>
           </div>
         </div>
-        <div className=" text-slate-200 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
+        <div className=" text-slate-200 hover:bg-base-100 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
           <div className=" flex justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"

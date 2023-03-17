@@ -16,7 +16,7 @@ const Search = () => {
   return (
     <div className=" font-quick">
       <input
-        className=" p-1 rounded-lg focus: outline-none bg-slate-400/70 placeholder:text-white/80 placeholder:pl-2 placeholder:text-sm"
+        className=" p-1 rounded-lg focus: outline-none bg-base-200 placeholder:text-white/80 placeholder:pl-2 placeholder:text-sm"
         type="text"
         placeholder="cari barang"
       />
@@ -25,7 +25,7 @@ const Search = () => {
 };
 const Header = () => {
   return (
-    <div className=" bg-slate-500 text-white p-3 flex justify-between gap-5">
+    <div className=" bg-base-100 text-white p-3 flex justify-between gap-5">
       <div className=" flex flex-col justify-center">
         <h1 className=" text-xl font-jost text-left">Digital Store</h1>
       </div>

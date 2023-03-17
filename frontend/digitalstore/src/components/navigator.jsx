@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Navigator = () => {
   return (
     <div className=" flex">
-      <Link to="/" className=" w-full p-2 flex justify-center bg-slate-600">
+      <Link to="/" className=" w-full p-2 flex justify-center bg-base-200">
         <div className=" flex flex-col justify-center font-quick">
           <div className=" flex justify-center">
             <svg
@@ -21,7 +21,7 @@ const Navigator = () => {
           </div>
         </div>
       </Link>
-      <Link to="/chat" className=" w-full p-2 flex justify-center bg-slate-600">
+      <Link to="/chat" className=" w-full p-2 flex justify-center bg-base-200">
         <div className=" flex flex-col justify-center font-quick">
           <div className=" flex justify-center">
             <svg
@@ -40,7 +40,7 @@ const Navigator = () => {
       </Link>
       <Link
         to="/profile"
-        className=" w-full p-2 flex justify-center bg-slate-600"
+        className=" w-full p-2 flex justify-center bg-base-200"
       >
         <div className=" flex flex-col justify-center font-quick">
           <div className=" flex justify-center">

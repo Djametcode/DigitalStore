@@ -4,11 +4,11 @@ import Login from "./Login";
 
 const Wrapper = () => {
   return (
-    <div className=" bg-slate-600 flex flex-col justify-center">
+    <div className=" bg-base-200 flex flex-col justify-center">
       <div className=" flex justify-center">
         <Login />
       </div>
-      <div className=" font-quick text-white/50 flex justify-center pb-3">
+      <div className=" font-quick text-white/50 flex justify-center pb-8">
         <div className=" flex flex-col">
           <p className=" text-sm">Belum punya akun?</p>
           <Link to="/register" className=" underline text-xs text-center">

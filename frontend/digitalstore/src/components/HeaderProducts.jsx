@@ -18,9 +18,9 @@ const Search = () => {
   return (
     <div className=" font-quick">
       <input
-        className=" p-1 rounded-lg focus: outline-none bg-slate-400/70 placeholder:text-white/80 placeholder:pl-2 placeholder:text-sm"
+        className=" p-1 rounded-lg focus: outline-none bg-base-200 placeholder:text-white/80 placeholder:pl-2 placeholder:text-sm"
         type="text"
-        placeholder="mencari sesuatu .. ?"
+        placeholder="Ketikan sesuatu .."
       />
     </div>
   );
@@ -31,10 +31,10 @@ const HeaderProducts = () => {
     localStorage.removeItem("id_product");
   };
   return (
-    <div className=" bg-slate-500 text-white p-4 flex justify-between gap-5">
+    <div className=" bg-base-100 text-white p-4 flex justify-between gap-5">
       <div className=" flex flex-col justify-center">
         <Link
-          className=" font-jost bg-slate-400 text-slate-100 rounded-xl w-16 p-1 text-center"
+          className=" font-jost bg-base-200 text-slate-100 rounded-xl w-16 p-1 text-center"
           onclick={closeDetail}
           to="/"
         >
