@@ -1,5 +1,4 @@
-import Footer from "./footer";
-import ForYou from "./foryou";
+import ProductLists from "./foryouproduct";
 import Header from "./header";
 import Menu from "./menu";
 import Navigator from "./navigator";
@@ -11,7 +10,7 @@ const DigitalStore = () => {
         <Header />
       </div>
       <Menu />
-      <ForYou />
+      <ProductLists />
       <div className=" fixed bottom-0 w-full">
         <Navigator />
       </div>

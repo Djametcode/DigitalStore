@@ -1,12 +1,15 @@
 import Header from "./header";
 import Navigator from "./navigator";
+import Wrapper from "./profilecomponent/wrapper";
 
 const Profile = () => {
   return (
     <div>
-      <Header />
+      <div className=" sticky top-0">
+        <Header />
+      </div>
       <div>
-        <p>soon</p>
+        <Wrapper />
       </div>
       <div className=" fixed bottom-0 w-full">
         <Navigator />

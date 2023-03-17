@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProductDetail from "./components/productDetail";
 import Chat from "./components/chat";
 import Profile from "./components/profile";
+import WrapperRegister from "./components/profilecomponent/register";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/register",
+    element: <WrapperRegister />,
   },
 ]);
 

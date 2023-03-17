@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import axios from "axios";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ProductContext } from "./foryou";
 
 const ImageProducts = ({ data }) => {
   //   console.log(data);
@@ -48,16 +48,34 @@ const Extends = ({ data }) => {
   );
 };
 
-const Products = ({ data }) => {
-  const result = data.map((item) => <Extends data={item} key={data._id} />);
+const Products = ({ products }) => {
+  const result = products.map((item) => <Extends data={item} key={item._id} />);
   return <div className=" grid grid-cols-2 gap-2 m-2 pb-16">{result}</div>;
 };
 
 const ProductLists = () => {
-  const { products, setProducts } = useContext(ProductContext);
+  const [products, setProducts] = useState([]);
+  const getAllProducts = async () => {
+    try {
+      const response = await axios.get(
+        "https://breakable-outfit-bear.cyclic.app/products/get-all-products"
+      );
+      const item = response.data;
+      const { data } = item;
+      setProducts(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getAllProducts();
+  }, []);
   return (
-    <div className=" flex">
-      <Products data={products} />
+    <div className=" font-quick bg-slate-500 text-white">
+      <h1 className=" p-3 text-l">Mungkin Anda suka</h1>
+      <div className=" flex justify-center">
+        <Products products={products} />
+      </div>
     </div>
   );
 };
