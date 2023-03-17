@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const Chart = () => {
   return (
     <div>
@@ -13,16 +15,22 @@ const Chart = () => {
   );
 };
 const Search = () => {
+  const redirect = useNavigate();
+  const toggleMenu = () => {
+    redirect("/search_product");
+  };
   return (
     <div className=" font-quick">
       <input
         className=" p-1 rounded-lg focus: outline-none bg-base-200 placeholder:text-white/80 placeholder:pl-2 placeholder:text-sm"
         type="text"
         placeholder="cari barang"
+        onClick={toggleMenu}
       />
     </div>
   );
 };
+
 const Header = () => {
   return (
     <div className=" bg-base-100 text-white p-3 flex justify-between gap-5">

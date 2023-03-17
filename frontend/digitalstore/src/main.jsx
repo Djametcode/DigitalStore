@@ -9,6 +9,7 @@ import Profile from "./components/profile";
 import WrapperRegister from "./components/profilecomponent/register";
 import LandingUser from "./components/logged_user/landing_user";
 import ProfileLogged from "./components/logged_user/profil_logged";
+import SearchProduct from "./components/search";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/profile_logged",
     element: <ProfileLogged />,
+  },
+  {
+    path: "/search_product",
+    element: <SearchProduct />,
   },
 ]);
 
