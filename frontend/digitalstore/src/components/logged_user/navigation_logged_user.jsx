@@ -21,7 +21,10 @@ const NavigatorLoggedUser = () => {
           </div>
         </div>
       </Link>
-      <Link to="/chat" className=" w-full p-2 flex justify-center bg-slate-600">
+      <Link
+        to="/chat_logged"
+        className=" w-full p-2 flex justify-center bg-slate-600"
+      >
         <div className=" flex flex-col justify-center font-quick">
           <div className=" flex justify-center">
             <svg
