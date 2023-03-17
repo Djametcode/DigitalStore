@@ -10,7 +10,7 @@ const LandingUser = () => {
       <div className=" sticky top-0 z-20">
         <Header />
       </div>
-      <div className=" font-jost p-2 bg-gradient-to-br from-slate-800 to-slate-500">
+      <div className=" font-jost p-2 bg-base-100">
         <p>Selamat datang {name}</p>
       </div>
       <div>

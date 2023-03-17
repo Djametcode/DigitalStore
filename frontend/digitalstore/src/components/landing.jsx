@@ -1,3 +1,4 @@
+import Carousel_landing from "./carousel_landing";
 import ProductLists from "./foryouproduct";
 import Header from "./header";
 import Menu from "./menu";
@@ -10,6 +11,9 @@ const DigitalStore = () => {
         <Header />
       </div>
       <Menu />
+      <div>
+        <Carousel_landing />
+      </div>
       <ProductLists />
       <div className=" fixed bottom-0 w-full">
         <Navigator />

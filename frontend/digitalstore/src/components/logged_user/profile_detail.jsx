@@ -1,17 +1,20 @@
+import MenuUser from "./menu_user";
+import MenuUserExtends from "./menu_user_2";
+
 const ProfileDetail = () => {
   const name = localStorage.getItem("name");
   return (
     <div>
-      <div className=" flex bg-slate-400/70">
-        <div className=" flex justify-center p-4">
+      <div className=" flex bg-base-200">
+        <div className=" flex bg-base-200 justify-center p-4">
           <div className=" bg-iphone bg-cover w-16 h-16 rounded-full"></div>
         </div>
-        <div className=" flex flex-col justify-center text-base-100 font-quick">
+        <div className=" flex flex-col justify-start p-3 bg-base-100 rounded-lg m-3 w-full font-quick">
           <p className=" text-sm">{name}</p>
           <p className=" text-sm">Hello world</p>
         </div>
       </div>
-      <div className=" bg-slate-500 text-sm font-quick flex justify-between p-3">
+      <div className=" bg-base-200 text-sm font-quick flex justify-between p-3">
         <div className=" cursor-pointer flex gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +78,15 @@ const ProfileDetail = () => {
           </div>
         </div>
       </div>
-      <div></div>
+      <div>
+        <MenuUser />
+      </div>
+      <div className=" p-2 font-jost">
+        <p>Menu Lain :</p>
+      </div>
+      <div>
+        <MenuUserExtends />
+      </div>
     </div>
   );
 };
