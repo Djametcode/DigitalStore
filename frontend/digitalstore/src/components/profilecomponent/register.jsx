@@ -43,9 +43,8 @@ const Register = () => {
         data
       );
       const item = response.data;
-      const {
-        data: { firstname, lastname, email, mobile, msg },
-      } = item;
+      console.log(item);
+      console.log(data);
       await setResult(msg);
       await toggleTxt(true);
       event.preventDefault();
@@ -102,7 +101,6 @@ const Register = () => {
           Registrasi
         </button>
       </div>
-      {txt && <p>{result}</p>}
     </div>
   );
 };
