@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../header";
 import Navigator from "../navigator";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,26 +29,26 @@ const Register = () => {
     setPassword(passwordRef.current.value);
   };
 
-  const data = {
+  const formDatas = {
     firstname: firstName,
     lastname: lastName,
     email: email,
     mobile: phone,
     password: password,
   };
-  console.log(data);
+  console.log(formDatas);
 
   const registerUser = async () => {
     try {
       const response = await axios.post(
         "https://breakable-outfit-bear.cyclic.app/register",
-        data
+        formDatas
       );
       const item = response.data;
-      console.log(item);
-      console.log(data);
+      const { data, msg } = item;
       await setResult(msg);
       await toggleTxt(true);
+      await setFirstName("");
       event.preventDefault();
     } catch (error) {
       console.log(error.data);
@@ -93,6 +95,10 @@ const Register = () => {
           onChange={handleChange}
         />
       </form>
+      {txt && (
+        <p className=" bg-slate-500/40 text-center p-2 rounded-lg">{result}</p>
+      )}
+
       <div className=" flex justify-center">
         <button
           onClick={registerUser}
