@@ -18,7 +18,7 @@ const Search = () => {
       <input
         className=" p-1 rounded-lg focus: outline-none bg-slate-400/70 placeholder:text-white/80 placeholder:pl-2 placeholder:text-sm"
         type="text"
-        placeholder="mencari sesuatu .. ?"
+        placeholder="cari barang"
       />
     </div>
   );

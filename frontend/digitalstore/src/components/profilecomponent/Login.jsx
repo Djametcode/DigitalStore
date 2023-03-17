@@ -34,6 +34,8 @@ const Login = () => {
       } = item;
 
       setName(firstname);
+      localStorage.setItem("token", token);
+      localStorage.setItem("name", firstname + lastname);
       await setMsg(msg);
       await toggleTxt(true);
       await navigate("/logged_user");
@@ -85,5 +87,4 @@ const Login = () => {
   );
 };
 
-// https://breakable-outfit-bear.cyclic.app/login-user
 export default Login;
