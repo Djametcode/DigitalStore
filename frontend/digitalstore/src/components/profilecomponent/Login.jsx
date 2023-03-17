@@ -1,13 +1,15 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [userData, setUserData] = useState([]);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [msg, setMsg] = useState("");
+  const [msgWarning, setMsg] = useState("");
   const [txt, toggleTxt] = useState(false);
 
+  const [name, setName] = useState("");
   const emailRef = useRef();
   const passRef = useRef();
 
@@ -19,7 +21,6 @@ const Login = () => {
     email: email,
     password: password,
   };
-  console.log(loginData);
   const loginHandle = async () => {
     try {
       const response = await axios.post(
@@ -27,14 +28,26 @@ const Login = () => {
         loginData
       );
       const item = response.data;
-      const { data, msg } = item;
+      const {
+        data: { token, firstname, lastname, mobile, email },
+        msg,
+      } = item;
+
+      setName(firstname);
       await setMsg(msg);
-      toggleTxt(true);
+      await toggleTxt(true);
+      await navigate("/logged_user");
       setEmail("");
       setPassword("");
+
       event.preventDefault();
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
+      const item = err.response.data;
+      const { msg } = item;
+      console.log(msg);
+      await setMsg(msg);
+      await toggleTxt(true);
     }
   };
   return (
@@ -55,7 +68,11 @@ const Login = () => {
           onChange={handleChange}
         />
       </form>
-      <div>{txt && <p className=" text-center">{msg}</p>}</div>
+      <div>
+        {txt && (
+          <p className=" text-sm text-red-500 text-center">{msgWarning}</p>
+        )}
+      </div>
       <div className=" flex justify-center">
         <button
           onClick={loginHandle}

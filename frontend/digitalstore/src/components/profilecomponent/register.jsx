@@ -55,18 +55,18 @@ const Register = () => {
     }
   };
   return (
-    <div className=" font-quick p-5 m-3 flex flex-col gap-2">
-      <form className=" flex flex-col gap-2" action="#">
+    <div>
+      <form className=" flex flex-col gap-2 font-jost" action="#">
         <div className=" flex gap-2">
           <input
-            className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
+            className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none w-full focus:text-white text-white"
             type="text"
             placeholder="First Name"
             ref={firstNameRef}
             onChange={handleChange}
           />
           <input
-            className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none focus:text-white text-white"
+            className=" bg-slate-400 placeholder:text-white placeholder:text-sm p-2 rounded-xl focus:outline-none w-full focus:text-white text-white"
             type="text"
             placeholder="Last Name"
             ref={lastNameRef}
@@ -95,14 +95,18 @@ const Register = () => {
           onChange={handleChange}
         />
       </form>
-      {txt && (
-        <p className=" bg-slate-500/40 text-center p-2 rounded-lg">{result}</p>
-      )}
+      <div>
+        {txt && (
+          <p className=" bg-slate-500/40 text-center p-2 rounded-lg">
+            {result}
+          </p>
+        )}
+      </div>
 
-      <div className=" flex justify-center">
+      <div className=" flex justify-center pt-2">
         <button
           onClick={registerUser}
-          className=" bg-slate-500/40 p-1 rounded-lg text-white/70"
+          className=" font-jost bg-slate-500/40 p-1 rounded-lg text-white/70"
         >
           Registrasi
         </button>
@@ -114,12 +118,11 @@ const Register = () => {
 const WrapperRegister = () => {
   return (
     <div>
-      <div className=" sticky top-0">
-        <Header />
-      </div>
-      <div className=" flex justify-center">
+      <Header />
+      <div className=" m-3">
         <Register />
       </div>
+
       <div className=" fixed bottom-0 w-full">
         <Navigator />
       </div>

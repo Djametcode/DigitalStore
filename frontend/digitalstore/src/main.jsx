@@ -7,6 +7,7 @@ import ProductDetail from "./components/productDetail";
 import Chat from "./components/chat";
 import Profile from "./components/profile";
 import WrapperRegister from "./components/profilecomponent/register";
+import LandingUser from "./components/logged_user/landing_user";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <WrapperRegister />,
+  },
+  {
+    path: "/logged_user",
+    element: <LandingUser />,
   },
 ]);
 
