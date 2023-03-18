@@ -71,7 +71,7 @@ const NavPostingan = () => {
               />
             </svg>
           </div>
-          <div className=" text-sm">
+          <div className=" flex justify-center text-sm">
             <p>Jualan Saya</p>
           </div>
         </div>

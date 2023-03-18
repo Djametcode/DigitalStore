@@ -62,7 +62,7 @@ const ExtendsStore = ({ data, get }) => {
           <p>{title}</p>
         </div>
       </div>
-      <div className=" flex gap-3 justify-center p-3 bg-base-300 rounded-xl">
+      <div className=" flex gap-3 justify-center p-3 bg-base-300 rounded-br-xl rounded-bl-xl">
         <div className=" flex flex-col justify-center">
           <DeleteButton id={_id} get={get} />
         </div>
