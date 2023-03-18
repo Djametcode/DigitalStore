@@ -10,6 +10,7 @@ import WrapperRegister from "./components/profilecomponent/register";
 import LandingUser from "./components/logged_user/landing_user";
 import ProfileLogged from "./components/logged_user/profil_logged";
 import SearchProduct from "./components/search";
+import ErrorPage from "./components/error";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/search_product",
     element: <SearchProduct />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 
