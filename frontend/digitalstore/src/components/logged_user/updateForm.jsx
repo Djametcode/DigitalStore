@@ -22,7 +22,7 @@ const UpdateForm = () => {
     color: color,
     brand: brand,
     category: category,
-    // images: pict,
+    images: pict,
   };
   console.log(data);
 

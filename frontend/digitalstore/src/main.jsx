@@ -13,7 +13,6 @@ import SearchProduct from "./components/search";
 import ErrorPage from "./components/error";
 import SellSomething from "./components/logged_user/sell_some";
 import MyStore from "./components/logged_user/mystore";
-import UpdateForm from "./components/logged_user/updateForm";
 import UpdateStore from "./components/logged_user/updateStore";
 
 const router = createBrowserRouter([
