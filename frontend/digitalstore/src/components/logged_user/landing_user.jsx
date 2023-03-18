@@ -2,6 +2,7 @@ import ProductLists from "../foryouproduct";
 import Header from "../header";
 import Menu from "../menu";
 import NavigatorLoggedUser from "./navigation_logged_user";
+import NavPostingan from "./nav_postingan";
 
 const LandingUser = () => {
   const name = localStorage.getItem("name");
@@ -20,7 +21,7 @@ const LandingUser = () => {
         <ProductLists />
       </div>
       <div className=" fixed bottom-0 w-full">
-        <NavigatorLoggedUser />
+        <NavPostingan />
       </div>
     </div>
   );

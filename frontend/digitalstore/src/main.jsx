@@ -11,6 +11,10 @@ import LandingUser from "./components/logged_user/landing_user";
 import ProfileLogged from "./components/logged_user/profil_logged";
 import SearchProduct from "./components/search";
 import ErrorPage from "./components/error";
+import SellSomething from "./components/logged_user/sell_some";
+import MyStore from "./components/logged_user/mystore";
+import UpdateForm from "./components/logged_user/updateForm";
+import UpdateStore from "./components/logged_user/updateStore";
 
 const router = createBrowserRouter([
   {
@@ -42,12 +46,24 @@ const router = createBrowserRouter([
     element: <ProfileLogged />,
   },
   {
+    path: "/sell_something",
+    element: <SellSomething />,
+  },
+  {
     path: "/search_product",
     element: <SearchProduct />,
   },
   {
+    path: "/my_store",
+    element: <MyStore />,
+  },
+  {
     path: "*",
     element: <ErrorPage />,
+  },
+  {
+    path: "/update_barang",
+    element: <UpdateStore />,
   },
 ]);
 

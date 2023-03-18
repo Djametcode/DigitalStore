@@ -1,16 +1,15 @@
 import Header from "../header";
-import NavigatorLoggedUser from "./navigation_logged_user";
 import NavPostingan from "./nav_postingan";
-import ProfileDetail from "./profile_detail";
+import UpdateForm from "./updateForm";
 
-const ProfileLogged = () => {
+const UpdateStore = () => {
   return (
     <div>
       <div>
         <Header />
       </div>
       <div>
-        <ProfileDetail />
+        <UpdateForm />
       </div>
       <div className=" fixed bottom-0 w-full">
         <NavPostingan />
@@ -19,4 +18,4 @@ const ProfileLogged = () => {
   );
 };
 
-export default ProfileLogged;
+export default UpdateStore;

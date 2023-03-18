@@ -1,3 +1,4 @@
+import LogOut from "./logout";
 import MenuUser from "./menu_user";
 import MenuUserExtends from "./menu_user_2";
 
@@ -86,6 +87,9 @@ const ProfileDetail = () => {
       </div>
       <div>
         <MenuUserExtends />
+      </div>
+      <div>
+        <LogOut />
       </div>
     </div>
   );
