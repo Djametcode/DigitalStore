@@ -12,11 +12,11 @@ const ProfileDetail = () => {
         </div>
         <div className=" flex flex-col justify-start p-3 bg-base-100 rounded-lg m-3 w-full font-quick">
           <p className=" text-sm">{name}</p>
-          <p className=" text-sm">Hello world</p>
+          <p className=" text-sm">About Me : </p>
         </div>
       </div>
       <div className=" bg-base-200 text-sm font-quick flex justify-between p-3">
-        <div className=" cursor-pointer flex gap-1">
+        <div className="  hover:bg-blue-500 rounded-xl p-3 cursor-pointer flex gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -35,8 +35,8 @@ const ProfileDetail = () => {
             <p className=" text-l">Pesanan Saya</p>
           </div>
         </div>
-        <div className=" cursor-pointer flex gap-1">
-          <div>
+        <div className=" hover:bg-blue-500 hover:rounded-xl pl-3 cursor-pointer flex gap-1">
+          <div className=" flex flex-col justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -52,8 +52,8 @@ const ProfileDetail = () => {
               />
             </svg>
           </div>
-          <div className=" flex flex-col justify-center">
-            <div className=" flex">
+          <div className="  flex flex-col justify-center">
+            <div className="  flex">
               <div className=" flex flex-col justify-center">
                 <p> Lihat riwayat pesanan </p>
               </div>

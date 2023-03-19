@@ -1,7 +1,7 @@
 const MenuUser = () => {
   return (
     <div className=" flex justify-evenly font-quick bg-base-300">
-      <div className=" p-4 flex flex-col justify-center">
+      <div className=" cursor-pointer w-full hover:bg-blue-500 p-2 flex flex-col justify-center">
         <div className=" flex justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,11 +18,11 @@ const MenuUser = () => {
             />
           </svg>
         </div>
-        <div className=" text-sm">
+        <div className=" text-center text-sm">
           <p>Sedang di Proses</p>
         </div>
       </div>
-      <div className=" p-4  flex flex-col justify-center">
+      <div className=" p-2 cursor-pointer hover:bg-blue-500 w-full flex flex-col justify-center">
         <div className=" flex justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,11 +39,11 @@ const MenuUser = () => {
             />
           </svg>
         </div>
-        <div className=" text-sm">
+        <div className=" text-center text-sm">
           <p>Selesai</p>
         </div>
       </div>
-      <div className=" p-4">
+      <div className=" hover:bg-blue-500 w-full p-2">
         <div className=" flex justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const MenuUser = () => {
             />
           </svg>
         </div>
-        <div className=" text-sm">
+        <div className=" text-center text-sm">
           <p>Sedang di Proses</p>
         </div>
       </div>

@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Header from "../header";
 import NavPostingan from "./nav_postingan";
 import myCart from "../my_cart/my_cart";
-
+import cart from "../data_checkout";
+import { useNavigate } from "react-router-dom";
 // const ImageCart = ({ data }) => {
 //   const urls = data[0];
 //   const { url } = urls;
@@ -46,6 +47,61 @@ const config = {
     authorization: `Bearer ${token}`,
   },
 };
+
+const PriceToPay = ({ total }) => {
+  return (
+    <div>
+      <p>Total yang harus di bayar : {total} </p>
+    </div>
+  );
+};
+
+const CheckoutItem = () => {
+  const navigate = useNavigate();
+  const [total, setTotal] = useState("");
+  const [status, setStatus] = useState(true);
+  const cart = myCart.map((item) => ({
+    id: item.id,
+    count: item.count,
+    color: item.color,
+  }));
+
+  const bayarSekarang = async () => {
+    try {
+      const response = await axios.post(
+        "https://breakable-outfit-bear.cyclic.app/cart",
+        { cart },
+        config
+      );
+      const item = response.data;
+      const { cartTotal } = item;
+      setTotal(cartTotal);
+      setStatus(true);
+      await navigate("/bayar");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return (
+    <>
+      <div className=" justify-between flex fixed bottom-16 translate-y-1 p-4 w-full bg-base-200">
+        <div className=" flex flex-col justify-center font-jost">
+          <p>Total item : {myCart.length}</p>
+          {status && <p>Rp. {total}</p>}
+        </div>
+        <div>
+          <button
+            onClick={bayarSekarang}
+            className=" bg-green-500 p-2 text-base-300 font-jost rounded-lg"
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
+
 const Cart = () => {
   console.log(myCart);
   // const [total, setTotal] = useState();
@@ -72,7 +128,7 @@ const Cart = () => {
       <div className=" sticky top-0">
         <Header />
       </div>
-      <div className=" p-4 bg-base-200 pb-24 font-jost">
+      <div className=" p-4 bg-base-200 pb-36 font-jost">
         <h1>Keranjang Saya</h1>
         {myCart.map((items) => (
           <div className=" bg-base-300 m-3 p-4 rounded-xl">
@@ -97,6 +153,9 @@ const Cart = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div>
+        <CheckoutItem />
       </div>
       <div className=" fixed bottom-0 w-full">
         <NavPostingan />
