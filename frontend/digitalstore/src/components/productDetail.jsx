@@ -10,8 +10,10 @@ const DescriptionProduct = ({
   quantity,
   description,
   data,
-  color,
+  warna,
+  url,
 }) => {
+  const item = data[0];
   const result = data.map((item) => (
     <figure>
       <img
@@ -36,7 +38,14 @@ const DescriptionProduct = ({
           </div>
         </div>
         <div className=" flex justify-center card-actions">
-          <CheckOut color={color} stock={quantity} />
+          <CheckOut
+            color={warna}
+            stock={quantity}
+            urls={item}
+            title={title}
+            price={price}
+            url={url}
+          />
         </div>
       </div>
     </div>
@@ -51,7 +60,8 @@ const ProductDetail = () => {
   const [images, setImages] = useState([]);
   const [description, setDesc] = useState("");
   const [Ratings, setRatings] = useState();
-  const [color, setcolor] = useState("");
+  const [colors, setcolor] = useState("");
+  const [url, setUrl] = useState("");
 
   const getSpesifictProduct = async () => {
     const response = await axios.get(
@@ -61,7 +71,10 @@ const ProductDetail = () => {
     console.log(item);
     const { title, price, quantity, images, description, ratings, color } =
       item;
-    console.log(ratings);
+    console.log(color);
+    const test = images[0];
+    const { url } = test;
+    setUrl(url);
     setTitle(title);
     setPrice(price);
     setImages(images);
@@ -87,7 +100,8 @@ const ProductDetail = () => {
           quantity={quantity}
           description={description}
           data={images}
-          color={color}
+          warna={colors}
+          url={url}
         />
       </div>
       <div className=" fixed bottom-0 w-full">

@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import myCart from "./my_cart/my_cart";
 
-const CheckOut = ({ color, stock }) => {
+const CheckOut = ({ color, url, title, price }) => {
   const navigate = useNavigate();
-  const [qty, setQty] = useState();
-  const [colors, setColors] = useState();
   const id = localStorage.getItem("id_product");
   const token = localStorage.getItem("token");
+  const [clr, setclr] = useState("");
+  const [count, setCount] = useState("");
   const config = {
     headers: {
       authorization: `Bearer ${token}`,
@@ -15,33 +16,36 @@ const CheckOut = ({ color, stock }) => {
   };
 
   const data = {
-    cart: [
-      {
-        id: id,
-        count: qty,
-        color: colors,
-      },
-    ],
+    title: title,
+    price: price,
+    image: url,
+    id: id,
+    count: count,
+    color: clr,
   };
 
-  const addChart = async () => {
-    try {
-      const response = await axios.post(
-        "https://breakable-outfit-bear.cyclic.app/cart",
-        data,
-        config
-      );
-      const item = response.data;
-      await navigate("/cart");
-    } catch (error) {
-      console.log(error);
-    }
+  console.log(data);
+
+  const addChart = () => {
+    // try {
+    //   const response = await axios.post(
+    //     "https://breakable-outfit-bear.cyclic.app/cart",
+    //     data,
+    //     config
+    //   );
+    //   const item = response.data;
+    //   await navigate("/cart");
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    myCart.push(data);
+    console.log(myCart);
   };
   return (
     <>
       <div className=" rounded-xl flex flex-col gap-2 bg-base-200 p-3 font-quick">
         <select
-          onClick={(e) => setColors(e.target.value)}
+          onClick={(e) => setclr(e.target.value)}
           className=" rounded-xl p-2 bg-base-300"
           name="color"
           id="color"
@@ -52,7 +56,7 @@ const CheckOut = ({ color, stock }) => {
           className=" rounded-xl p-2 bg-base-300"
           type="number"
           placeholder="jumlah"
-          onChange={(e) => setQty(e.target.value)}
+          onChange={(e) => setCount(e.target.value)}
         />
       </div>
       <div className=" m-2 flex justify-center font-quick gap-2 text-white/80">
