@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CheckOut = ({ color, stock }) => {
+  const navigate = useNavigate();
   const [qty, setQty] = useState();
   const [colors, setColors] = useState();
   const id = localStorage.getItem("id_product");
@@ -21,7 +23,6 @@ const CheckOut = ({ color, stock }) => {
       },
     ],
   };
-  ``;
 
   const addChart = async () => {
     try {
@@ -31,7 +32,7 @@ const CheckOut = ({ color, stock }) => {
         config
       );
       const item = response.data;
-      console.log(item);
+      await navigate("/cart");
     } catch (error) {
       console.log(error);
     }
