@@ -23,6 +23,7 @@ import IsLoggedUpdate from "./components/protected/isLogged_update";
 import SearchProtect from "./components/protected/search_protect";
 import Cart from "./components/logged_user/cart";
 import IsLoggedCart from "./components/protected/isLogged_cart";
+import LandingProtect from "./components/protected/landing_protect";
 
 const router = createBrowserRouter([
   {
@@ -55,7 +56,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <App />,
+    element: (
+      <LandingProtect>
+        <App />
+      </LandingProtect>
+    ),
   },
   {
     path: "/update_barang",
