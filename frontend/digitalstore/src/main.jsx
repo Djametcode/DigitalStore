@@ -24,6 +24,8 @@ import SearchProtect from "./components/protected/search_protect";
 import Cart from "./components/logged_user/cart";
 import IsLoggedCart from "./components/protected/isLogged_cart";
 import LandingProtect from "./components/protected/landing_protect";
+import PaymentProtect from "./components/protected/isLogged_MyOrder";
+import MyOrder from "./components/payment/myOrder";
 
 const router = createBrowserRouter([
   {
@@ -112,6 +114,14 @@ const router = createBrowserRouter([
       <IsLoggedCart>
         <Cart />
       </IsLoggedCart>
+    ),
+  },
+  {
+    path: "/bayar",
+    element: (
+      <PaymentProtect>
+        <MyOrder />
+      </PaymentProtect>
     ),
   },
 ]);

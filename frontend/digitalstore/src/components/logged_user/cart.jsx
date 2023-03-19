@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "../header";
 import NavPostingan from "./nav_postingan";
 import myCart from "../my_cart/my_cart";
 import cart from "../data_checkout";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 // const ImageCart = ({ data }) => {
 //   const urls = data[0];
 //   const { url } = urls;
@@ -59,7 +59,6 @@ const PriceToPay = ({ total }) => {
 const CheckoutItem = () => {
   const navigate = useNavigate();
   const [total, setTotal] = useState("");
-  const [status, setStatus] = useState(true);
   const cart = myCart.map((item) => ({
     id: item.id,
     count: item.count,
@@ -75,11 +74,16 @@ const CheckoutItem = () => {
       );
       const item = response.data;
       const { cartTotal } = item;
-      setTotal(cartTotal);
-      setStatus(true);
-      await navigate("/bayar");
+      let text = cartTotal.toLocaleString("ID", {
+        style: "currency",
+        currency: "IDR",
+      });
+      await setTotal(text);
+      await setStatus(true);
     } catch (error) {
       console.log(error);
+    } finally {
+      navigate("/bayar");
     }
   };
   return (
@@ -87,7 +91,7 @@ const CheckoutItem = () => {
       <div className=" justify-between flex fixed bottom-16 translate-y-1 p-4 w-full bg-base-200">
         <div className=" flex flex-col justify-center font-jost">
           <p>Total item : {myCart.length}</p>
-          {status && <p>Rp. {total}</p>}
+          {status && <p>{total}</p>}
         </div>
         <div>
           <button
@@ -103,7 +107,10 @@ const CheckoutItem = () => {
 };
 
 const Cart = () => {
-  console.log(myCart);
+  const priceref = useRef();
+  const [status, setStatus] = useState(false);
+  const [price, setPrice] = useState();
+
   // const [total, setTotal] = useState();
   // const [product, setProduct] = useState([]);
   // const getALlUseCart = async () => {
