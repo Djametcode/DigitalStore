@@ -69,10 +69,10 @@ const Cart = () => {
   // }, []);
   return (
     <div>
-      <div>
+      <div className=" sticky top-0">
         <Header />
       </div>
-      <div className=" p-4 bg-base-200 font-jost">
+      <div className=" p-4 bg-base-200 pb-24 font-jost">
         <h1>Keranjang Saya</h1>
         {myCart.map((items) => (
           <div className=" bg-base-300 m-3 p-4 rounded-xl">

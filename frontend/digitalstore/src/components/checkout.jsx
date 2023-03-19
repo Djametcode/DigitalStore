@@ -39,7 +39,7 @@ const CheckOut = ({ color, url, title, price }) => {
     //   console.log(error);
     // }
     myCart.push(data);
-    console.log(myCart);
+    navigate("/cart");
   };
   return (
     <>
@@ -53,7 +53,7 @@ const CheckOut = ({ color, url, title, price }) => {
           <option value={color}>{color}</option>
         </select>
         <input
-          className=" rounded-xl p-2 bg-base-300"
+          className=" focus:outline-none rounded-xl p-2 bg-base-300"
           type="number"
           placeholder="jumlah"
           onChange={(e) => setCount(e.target.value)}
