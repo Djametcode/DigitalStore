@@ -76,10 +76,7 @@ const NavPostingan = () => {
           </div>
         </div>
       </Link>
-      <Link
-        to="/profile_logged"
-        className=" w-full p-2 flex justify-center bg-base-300"
-      >
+      <Link to="/cart" className=" w-full p-2 flex justify-center bg-base-300">
         <div className=" flex flex-col justify-center font-quick">
           <div className=" flex justify-center">
             <svg

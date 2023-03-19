@@ -21,6 +21,8 @@ import IsLoggedSell from "./components/protected/islogged_sell";
 import IsLoggedMyStore from "./components/protected/isLogged_mystore";
 import IsLoggedUpdate from "./components/protected/isLogged_update";
 import SearchProtect from "./components/protected/search_protect";
+import Cart from "./components/logged_user/cart";
+import IsLoggedCart from "./components/protected/isLogged_cart";
 
 const router = createBrowserRouter([
   {
@@ -98,6 +100,14 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <ErrorPage />,
+  },
+  {
+    path: "/cart",
+    element: (
+      <IsLoggedCart>
+        <Cart />
+      </IsLoggedCart>
+    ),
   },
 ]);
 
