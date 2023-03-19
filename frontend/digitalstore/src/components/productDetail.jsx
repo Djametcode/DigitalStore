@@ -16,7 +16,7 @@ const DescriptionProduct = ({
     <figure>
       <img
         className=" w-72  rounded-xl"
-        key={data}
+        key={data._id}
         src={item.url}
         alt=""
         srcset=""

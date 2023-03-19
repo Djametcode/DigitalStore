@@ -34,7 +34,7 @@ const Navigator = () => {
             </svg>
           </div>
           <div className=" text-sm">
-            <p>Pesanan Saya</p>
+            <p>Rekomendasi</p>
           </div>
         </div>
       </Link>

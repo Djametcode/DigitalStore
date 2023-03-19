@@ -14,15 +14,70 @@ import ErrorPage from "./components/error";
 import SellSomething from "./components/logged_user/sell_some";
 import MyStore from "./components/logged_user/mystore";
 import UpdateStore from "./components/logged_user/updateStore";
+import ProtectedRoute from "./components/protectedRoutes";
+import IsLogged from "./components/protected/isLogged";
+import IsLoggedProfile from "./components/protected/isLogged_profile";
+import IsLoggedSell from "./components/protected/islogged_sell";
+import IsLoggedMyStore from "./components/protected/isLogged_mystore";
+import IsLoggedUpdate from "./components/protected/isLogged_update";
+import SearchProtect from "./components/protected/search_protect";
 
 const router = createBrowserRouter([
+  {
+    path: "/register",
+    element: <WrapperRegister />,
+  },
+  {
+    path: "/profile_logged",
+    element: (
+      <IsLoggedProfile>
+        <ProfileLogged />
+      </IsLoggedProfile>
+    ),
+  },
+  {
+    path: "/sell_something",
+    element: (
+      <IsLoggedSell>
+        <SellSomething />
+      </IsLoggedSell>
+    ),
+  },
+  {
+    path: "/my_store",
+    element: (
+      <IsLoggedMyStore>
+        <MyStore />
+      </IsLoggedMyStore>
+    ),
+  },
   {
     path: "/",
     element: <App />,
   },
   {
+    path: "/update_barang",
+    element: (
+      <IsLoggedUpdate>
+        <UpdateStore />
+      </IsLoggedUpdate>
+    ),
+  },
+  {
+    path: "/logged_user",
+    element: (
+      <IsLogged>
+        <LandingUser />
+      </IsLogged>
+    ),
+  },
+  {
     path: "/detail",
-    element: <ProductDetail />,
+    element: (
+      <ProtectedRoute>
+        <ProductDetail />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/chat",
@@ -33,36 +88,16 @@ const router = createBrowserRouter([
     element: <Profile />,
   },
   {
-    path: "/register",
-    element: <WrapperRegister />,
-  },
-  {
-    path: "/logged_user",
-    element: <LandingUser />,
-  },
-  {
-    path: "/profile_logged",
-    element: <ProfileLogged />,
-  },
-  {
-    path: "/sell_something",
-    element: <SellSomething />,
-  },
-  {
     path: "/search_product",
-    element: <SearchProduct />,
-  },
-  {
-    path: "/my_store",
-    element: <MyStore />,
+    element: (
+      <SearchProtect>
+        <SearchProduct />
+      </SearchProtect>
+    ),
   },
   {
     path: "*",
     element: <ErrorPage />,
-  },
-  {
-    path: "/update_barang",
-    element: <UpdateStore />,
   },
 ]);
 

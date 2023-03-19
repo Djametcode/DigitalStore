@@ -35,7 +35,7 @@ const HeaderProducts = () => {
       <div className=" flex flex-col justify-center">
         <Link
           className=" font-jost bg-base-200 text-slate-100 rounded-xl w-16 p-1 text-center"
-          onclick={closeDetail}
+          onClick={closeDetail}
           to="/profile_logged"
         >
           Back
