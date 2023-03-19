@@ -99,7 +99,7 @@ const Menu = () => {
           </div>
         </div>
       </div>
-      <div className=" flex justify-start text-center ml-2 gap-3 mb-5">
+      <div className=" flex justify-start text-center ml-2 gap-4 mb-5">
         <div className=" text-slate-200 hover:bg-base-100 bg-slate-500/40 flex flex-col justify-center w-16 h-16 rounded-xl">
           <div className=" flex justify-center">
             <svg

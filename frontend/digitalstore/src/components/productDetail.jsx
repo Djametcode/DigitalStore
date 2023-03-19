@@ -4,7 +4,14 @@ import CheckOut from "./checkout";
 import Footer from "./footer";
 import HeaderProducts from "./HeaderProducts";
 
-const DescriptionProduct = ({ title, price, quantity, description, data }) => {
+const DescriptionProduct = ({
+  title,
+  price,
+  quantity,
+  description,
+  data,
+  color,
+}) => {
   const result = data.map((item) => (
     <figure>
       <img
@@ -17,25 +24,6 @@ const DescriptionProduct = ({ title, price, quantity, description, data }) => {
     </figure>
   ));
   return (
-    // <div className=" flex flex-col gap-2 bg-slate-600/70 text-white/50 font-quick p-3">
-    //   <p className=" text-xl">Detail Produk :</p>
-    //   <div className=" bg-slate-300/30 p-3 rounded-xl">
-    //     <div>
-    //       <p>{title}</p>
-    //     </div>
-    //     <div className=" flex gap-4">
-    //       <p>Harga : </p>
-    //       <p>Rp. {price}</p>
-    //     </div>
-    //     <p>Stock : {quantity}</p>
-    //   </div>
-    //   <div className=" flex flex-col gap-3">
-    //     <p className=" text-xl">Deskripsi produk :</p>
-    //     <div className=" bg-slate-300/30 p-3 pb-24 rounded-lg">
-    //       <p>{description}</p>
-    //     </div>
-    //   </div>
-    // </div>
     <div className="card w-96 bg-base-100 shadow-xl">
       <div className=" pt-6">{result}</div>
       <div className="card-body">
@@ -48,30 +36,13 @@ const DescriptionProduct = ({ title, price, quantity, description, data }) => {
           </div>
         </div>
         <div className=" flex justify-center card-actions">
-          <CheckOut />
+          <CheckOut color={color} stock={quantity} />
         </div>
       </div>
     </div>
   );
 };
 
-// const ImageProducts = ({ data }) => {
-//   const result = data.map((item) => (
-//     <img
-//       className=" w-72  rounded-xl"
-//       key={data}
-//       src={item.url}
-//       alt=""
-//       srcset=""
-//     />
-//   ));
-//   return <div>{result}</div>;
-// };
-
-// const RatingElements = ({ datas }) => {
-//   const result = datas.map((item) => console.log(item));
-//   return <div>{result}</div>;
-// };
 const ProductDetail = () => {
   const id = localStorage.getItem("id_product");
   const [title, setTitle] = useState();
@@ -80,6 +51,7 @@ const ProductDetail = () => {
   const [images, setImages] = useState([]);
   const [description, setDesc] = useState("");
   const [Ratings, setRatings] = useState();
+  const [color, setcolor] = useState("");
 
   const getSpesifictProduct = async () => {
     const response = await axios.get(
@@ -87,7 +59,8 @@ const ProductDetail = () => {
     );
     const item = response.data;
     console.log(item);
-    const { title, price, quantity, images, description, ratings } = item;
+    const { title, price, quantity, images, description, ratings, color } =
+      item;
     console.log(ratings);
     setTitle(title);
     setPrice(price);
@@ -95,6 +68,7 @@ const ProductDetail = () => {
     setQuantity(quantity);
     setDesc(description);
     setRatings(ratings);
+    setcolor(color);
   };
 
   useEffect(() => {
@@ -113,6 +87,7 @@ const ProductDetail = () => {
           quantity={quantity}
           description={description}
           data={images}
+          color={color}
         />
       </div>
       <div className=" fixed bottom-0 w-full">
