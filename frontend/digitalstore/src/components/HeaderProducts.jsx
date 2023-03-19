@@ -36,7 +36,7 @@ const HeaderProducts = () => {
         <Link
           className=" font-jost bg-base-200 text-slate-100 rounded-xl w-16 p-1 text-center"
           onclick={closeDetail}
-          to="/"
+          to="/profile_logged"
         >
           Back
         </Link>
