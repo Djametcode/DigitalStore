@@ -8,6 +8,7 @@ const authRouter = require("./routes/authroutes");
 const productRouter = require("./routes/product");
 const auth = require("./middleware/authentication");
 //app use
+app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/api/v5/auth", authRouter);

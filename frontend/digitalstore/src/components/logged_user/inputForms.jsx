@@ -2,13 +2,6 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const token = localStorage.getItem("token");
-const config = {
-  headers: {
-    authorization: `Bearer ${token}`,
-  },
-};
-
 const InputForms = () => {
   const [name, setName] = useState("");
   console.log(name);
@@ -22,7 +15,18 @@ const InputForms = () => {
   const pictref = useRef();
   const navigate = useNavigate();
 
-  const dataImage = {
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: {
+      authorization: `Bearer ${token}`,
+      ContentType: "multipart/form-data",
+    },
+  };
+
+  // const datas = new FormData();
+  // datas.append("title", name);
+  // console.log(datas);
+  const data = {
     title: name,
     description: desc,
     price: price,
@@ -32,8 +36,10 @@ const InputForms = () => {
     category: category,
     images: pict,
   };
-  console.log(dataImage);
 
+  const datas = new FormData();
+  datas.append("data", data);
+  console.log(datas);
   const handleImage = (e) => {
     setPict(e.target.files[0]);
     // let files = e.target.files[0];
@@ -54,12 +60,21 @@ const InputForms = () => {
   };
 
   const postItem = async () => {
+    const formData = new FormData();
+    formData.append("title", name);
+    formData.append("description", desc);
+    formData.append("price", price);
+    formData.append("quantity", stock);
+    formData.append("color", color);
+    formData.append("brand", brand);
+    formData.append("category", category);
+    formData.append("images", pict);
     event.preventDefault();
     try {
       await axios.post(
         "https://breakable-outfit-bear.cyclic.app/products/create-product",
-        dataImage,
-        config
+        config,
+        formData
       );
       await navigate("/my_store");
     } catch (error) {
