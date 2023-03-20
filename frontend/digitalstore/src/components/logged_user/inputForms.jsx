@@ -18,7 +18,7 @@ const InputForms = () => {
   const token = localStorage.getItem("token");
   const config = {
     headers: {
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       ContentType: "multipart/form-data",
     },
   };
@@ -71,11 +71,18 @@ const InputForms = () => {
     formData.append("images", pict);
     event.preventDefault();
     try {
-      await axios.post(
+      const response = await axios.post(
         "https://breakable-outfit-bear.cyclic.app/products/create-product",
-        config,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
+        },
         formData
       );
+      const item = response.data;
+      console.log(item);
       await navigate("/my_store");
     } catch (error) {
       console.log(error);
