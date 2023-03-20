@@ -5,7 +5,7 @@ const IsLoggedProfileUserTwo = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
 
-  return token && role === "admin" ? (
+  return token && role === "user" ? (
     <ProfileUserTwo />
   ) : (
     <Navigate to="profile" />

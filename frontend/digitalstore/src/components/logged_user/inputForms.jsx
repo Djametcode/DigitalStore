@@ -23,7 +23,7 @@ const InputForms = () => {
     category: category,
     images: pict,
   };
-  console.log(data);
+  console.log(dataImage);
 
   const handleImage = (e) => {
     setPict(e.target.files[0]);
