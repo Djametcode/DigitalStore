@@ -102,7 +102,7 @@ const ProductsFilter = ({ data }) => {
   return (
     <div className="w-full bg-base-300 p-2 font-quick">
       <div className=" pt-3 pb-3 pl-3">
-        <Link className=" bg-base-100 p-2 rounded-xl" to="/">
+        <Link className=" bg-base-100 p-2 rounded-xl" to="/profile_logged">
           Kembali
         </Link>
       </div>

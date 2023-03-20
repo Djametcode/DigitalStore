@@ -28,14 +28,16 @@ const Login = () => {
         loginData
       );
       const item = response.data;
+      console.log(item);
       const {
-        data: { token, firstname, lastname, mobile, email },
+        data: { token, firstname, lastname, mobile, email, role },
         msg,
       } = item;
 
       setName(firstname);
       localStorage.setItem("token", token);
       localStorage.setItem("name", firstname + lastname);
+      localStorage.setItem("role", role);
       await setMsg(msg);
       await toggleTxt(true);
       await navigate("/logged_user");

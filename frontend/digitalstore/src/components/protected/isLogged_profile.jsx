@@ -3,7 +3,12 @@ import ProfileLogged from "../logged_user/profil_logged";
 
 const IsLoggedProfile = () => {
   const token = localStorage.getItem("token");
-  return token ? <ProfileLogged /> : <Navigate to="/profile" />;
+  const role = localStorage.getItem("role");
+  return token && role === "admin" ? (
+    <ProfileLogged />
+  ) : (
+    <Navigate to="/landing_user2" />
+  );
 };
 
 export default IsLoggedProfile;

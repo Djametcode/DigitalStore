@@ -3,7 +3,8 @@ import Cart from "../logged_user/cart";
 
 const IsLoggedCart = () => {
   const token = localStorage.getItem("token");
-  return token ? <Cart /> : <Navigate to="/profile" />;
+  const role = localStorage.getItem("role");
+  return token && role === "admin" ? <Cart /> : <Navigate to="/cart2" />;
 };
 
 export default IsLoggedCart;

@@ -5,6 +5,7 @@ import NavPostingan from "./nav_postingan";
 import myCart from "../my_cart/my_cart";
 import cart from "../data_checkout";
 import { Navigate, useNavigate } from "react-router-dom";
+import NavUserTwo from "./nav_user2";
 // const ImageCart = ({ data }) => {
 //   const urls = data[0];
 //   const { url } = urls;
@@ -105,7 +106,7 @@ const CheckoutItem = () => {
   );
 };
 
-const Cart = () => {
+const CartUsertwo = () => {
   const priceref = useRef();
 
   const [price, setPrice] = useState();
@@ -164,10 +165,10 @@ const Cart = () => {
         <CheckoutItem />
       </div>
       <div className=" fixed bottom-0 w-full">
-        <NavPostingan />
+        <NavUserTwo />
       </div>
     </div>
   );
 };
 
-export default Cart;
+export default CartUsertwo;

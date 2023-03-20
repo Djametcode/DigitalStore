@@ -26,11 +26,18 @@ import IsLoggedCart from "./components/protected/isLogged_cart";
 import LandingProtect from "./components/protected/landing_protect";
 import PaymentProtect from "./components/protected/isLogged_MyOrder";
 import MyOrder from "./components/payment/myOrder";
+import LandingUserTwo from "./components/logged_user/landing_user2";
+import ProfileUserTwo from "./components/logged_user/profile_user2";
+import CartUsertwo from "./components/logged_user/cart_user2";
 
 const router = createBrowserRouter([
   {
     path: "/register",
     element: <WrapperRegister />,
+  },
+  {
+    path: "/cart2",
+    element: <CartUsertwo />,
   },
   {
     path: "/profile_logged",
@@ -39,6 +46,14 @@ const router = createBrowserRouter([
         <ProfileLogged />
       </IsLoggedProfile>
     ),
+  },
+  {
+    path: "/profile_user2",
+    element: <ProfileUserTwo />,
+  },
+  {
+    path: "/landing_user2",
+    element: <LandingUserTwo />,
   },
   {
     path: "/sell_something",

@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 
 const LogOut = () => {
   const handleToken = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("name");
+    localStorage.clear();
   };
   return (
     <div className="flex justify-start p-2 font-quick">

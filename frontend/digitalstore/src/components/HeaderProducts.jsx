@@ -14,17 +14,6 @@ const Chart = () => {
     </div>
   );
 };
-const Search = () => {
-  return (
-    <div className=" font-quick">
-      <input
-        className=" p-1 rounded-lg focus: outline-none bg-base-200 placeholder:text-white/80 placeholder:pl-2 placeholder:text-sm"
-        type="text"
-        placeholder="Ketikan sesuatu .."
-      />
-    </div>
-  );
-};
 
 const HeaderProducts = () => {
   const closeDetail = () => {
@@ -42,7 +31,6 @@ const HeaderProducts = () => {
         </Link>
       </div>
       <div className=" flex justify-center gap-3">
-        <Search />
         <div className=" flex flex-col justify-center">
           <Chart />
         </div>
