@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const InputForms = () => {
   const [name, setName] = useState("");
@@ -12,6 +13,7 @@ const InputForms = () => {
   const [brand, setBrand] = useState("");
   const [category, setcategory] = useState("");
   const pictref = useRef();
+  const navigate = useNavigate();
 
   const dataImage = {
     title: name,
@@ -55,6 +57,7 @@ const InputForms = () => {
         dataImage,
         config
       );
+      await navigate("/cart");
     } catch (error) {
       console.log(error);
     }
