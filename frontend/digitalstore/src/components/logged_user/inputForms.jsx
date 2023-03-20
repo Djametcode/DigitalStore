@@ -13,7 +13,7 @@ const InputForms = () => {
   const [category, setcategory] = useState("");
   const pictref = useRef();
 
-  const data = {
+  const dataImage = {
     title: name,
     description: desc,
     price: price,
@@ -25,16 +25,20 @@ const InputForms = () => {
   };
   console.log(data);
 
-  const handleChange = () => {
-    let files = pictref.current.files[0];
-    // setPict(files);
-    convertBase64(files);
+  const handleImage = (e) => {
+    setPict(e.target.files[0]);
   };
+
+  // const handleChange = () => {
+  //   let files = pictref.current.files[0];
+  //   setPict(files);
+  //   // convertBase64(files);
+  // };
   const convertBase64 = (file) => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
-      setPict(reader.result);
+      // setPict(reader.result);
     };
   };
   const token = localStorage.getItem("token");
@@ -48,7 +52,7 @@ const InputForms = () => {
     try {
       await axios.post(
         "https://breakable-outfit-bear.cyclic.app/products/create-product",
-        data,
+        dataImage,
         config
       );
     } catch (error) {
@@ -78,9 +82,10 @@ const InputForms = () => {
           className=" p-2 focus:outline-none rounded-lg bg-base-200"
           type="file"
           placeholder="tambahkan gambar"
-          onChange={handleChange}
+          onChange={(e) => handleImage(e)}
           accept="image/*"
           ref={pictref}
+          name="images"
         />
         <input
           className=" p-2 focus:outline-none rounded-lg bg-base-200"
