@@ -37,13 +37,17 @@ const InputForms = () => {
     images: pict,
   };
 
-  const datas = new FormData();
-  datas.append("data", data);
-  console.log(datas);
+  console.log(data)
+
+  // const datas = new FormData();
+  // datas.append("data", data);
+  // console.log(datas);
+
   const handleImage = (e) => {
-    setPict(e.target.files[0]);
-    // let files = e.target.files[0];
-    // convertBase64(files);
+    // setPict(e.target.files[0]);
+    let files = e.target.files[0];
+    convertBase64(files);
+    // setPict(URL.createObjectURL(files))
   };
 
   // const handleChange = () => {
@@ -51,6 +55,7 @@ const InputForms = () => {
   //   setPict(files);
   //   // convertBase64(files);
   // };
+
   const convertBase64 = (file) => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
@@ -73,13 +78,13 @@ const InputForms = () => {
     try {
       const response = await axios.post(
         "https://breakable-outfit-bear.cyclic.app/products/create-product",
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
-          },
-        },
-        formData
+        // {
+        //   headers: {
+        //     "Content-Type": "multipart/form-data",
+        //     "Authorization": `Bearer ${token}`,
+        //   },
+        // },
+        data, config
       );
       const item = response.data;
       console.log(item);

@@ -5,10 +5,11 @@ import Header from "../header";
 import NavPostingan from "./nav_postingan";
 
 const ImageProduct = ({ data }) => {
-  const result = data.map((item) => (
-    <img className=" w-44 h-44 rounded-lg" src={item.url} alt="img" />
-  ));
-  return <div>{result}</div>;
+  return (
+    <div>
+      <img className=" w-44 h-44 rounded-lg" src={data} alt="img" />
+    </div>
+  )
 };
 
 const token = localStorage.getItem("token");
@@ -52,11 +53,12 @@ const UpdateButton = ({ id, get }) => {
 };
 const ExtendsStore = ({ data, get }) => {
   const { title, images, _id } = data;
+  const {url} = images;
   return (
     <div>
       <div className=" bg-base-300 p-3 flex">
         <div>
-          <ImageProduct data={images} />
+          <ImageProduct data={url} />
         </div>
         <div className=" flex flex-col justify-start p-3">
           <p>{title}</p>
