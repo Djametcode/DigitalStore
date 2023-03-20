@@ -2,18 +2,20 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ImageProducts = ({ data }) => {
-  //   console.log(data);
-  // const filter = data.filter((item) => item.length !== 0);
-  // console.log(filter);
-  const result = data.map((item) => (
-    <img className=" w-44 h-44 rounded-lg" src={item.url} alt="img" />
-  ));
-  return <div>{result}</div>;
-};
+// const ImageProducts = ({ data }) => {
+//   //   console.log(data);
+//   // const filter = data.filter((item) => item.length !== 0);
+//   // console.log(filter);
+//   const result = data.map((item) => (
+    
+//   ));
+//   return <div>{result}</div>;
+// };
 
 const Extends = ({ data }) => {
   const { title, price, images, _id } = data;
+  console.log(images)
+  const {url} = images
   const navigate = useNavigate();
   //   console.log(images);
   const handleClick = async () => {
@@ -31,7 +33,7 @@ const Extends = ({ data }) => {
       </div>
       {/* <ImageProducts data={images} /> */}
       <div>
-        <ImageProducts data={images} />
+      <img className=" w-44 h-44 rounded-lg" src={url} alt="img" />
       </div>
 
       <div className=" bg-base-100 p-2 rounded-lg flex flex-col text-left pl-3 text-sm">
