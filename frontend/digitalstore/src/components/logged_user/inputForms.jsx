@@ -57,7 +57,7 @@ const InputForms = () => {
         dataImage,
         config
       );
-      await navigate("/cart");
+      await navigate("/my_store");
     } catch (error) {
       console.log(error);
     }
