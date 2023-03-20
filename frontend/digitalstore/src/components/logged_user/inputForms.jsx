@@ -2,6 +2,13 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const token = localStorage.getItem("token");
+const config = {
+  headers: {
+    authorization: `Bearer ${token}`,
+  },
+};
+
 const InputForms = () => {
   const [name, setName] = useState("");
   console.log(name);
@@ -45,12 +52,7 @@ const InputForms = () => {
       setPict(reader.result);
     };
   };
-  const token = localStorage.getItem("token");
-  const config = {
-    headers: {
-      authorization: `Bearer ${token}`,
-    },
-  };
+
   const postItem = async () => {
     event.preventDefault();
     try {
