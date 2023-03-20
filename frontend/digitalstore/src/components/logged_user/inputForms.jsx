@@ -35,9 +35,9 @@ const InputForms = () => {
   console.log(dataImage);
 
   const handleImage = (e) => {
-    // setPict(e.target.files[0]);
-    let files = e.target.files[0];
-    convertBase64(files);
+    setPict(e.target.files[0]);
+    // let files = e.target.files[0];
+    // convertBase64(files);
   };
 
   // const handleChange = () => {
