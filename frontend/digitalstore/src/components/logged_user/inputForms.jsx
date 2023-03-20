@@ -27,6 +27,7 @@ const InputForms = () => {
 
   const handleChange = () => {
     let files = pictref.current.files[0];
+    // setPict(files);
     convertBase64(files);
   };
   const convertBase64 = (file) => {
