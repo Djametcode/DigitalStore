@@ -28,7 +28,9 @@ const InputForms = () => {
   console.log(dataImage);
 
   const handleImage = (e) => {
-    setPict(e.target.files[0]);
+    // setPict(e.target.files[0]);
+    let files = e.target.files[0];
+    convertBase64(files);
   };
 
   // const handleChange = () => {
@@ -40,7 +42,7 @@ const InputForms = () => {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
-      // setPict(reader.result);
+      setPict(reader.result);
     };
   };
   const token = localStorage.getItem("token");
