@@ -29,6 +29,8 @@ import MyOrder from "./components/payment/myOrder";
 import LandingUserTwo from "./components/logged_user/landing_user2";
 import ProfileUserTwo from "./components/logged_user/profile_user2";
 import CartUsertwo from "./components/logged_user/cart_user2";
+import IsLoggedLandingUser2 from "./components/protected/isLogged_landing_user2";
+import IsLoggedProfileUserTwo from "./components/protected/isLogged_profileUser2";
 
 const router = createBrowserRouter([
   {
@@ -49,11 +51,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile_user2",
-    element: <ProfileUserTwo />,
+    element: (
+      <IsLoggedProfileUserTwo>
+        <ProfileUserTwo />
+      </IsLoggedProfileUserTwo>
+    ),
   },
   {
     path: "/landing_user2",
-    element: <LandingUserTwo />,
+    element: (
+      <IsLoggedLandingUser2>
+        <LandingUserTwo />
+      </IsLoggedLandingUser2>
+    ),
   },
   {
     path: "/sell_something",

@@ -1,14 +1,15 @@
 import { Navigate } from "react-router-dom";
-import LandingUser from "../logged_user/landing_user";
+import ProfileUserTwo from "../logged_user/profile_user2";
 
-const LandingProtect = () => {
+const IsLoggedProfileUserTwo = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
+
   return token && role === "admin" ? (
-    <LandingUser />
+    <ProfileUserTwo />
   ) : (
-    <Navigate to="/landing_user2" />
+    <Navigate to="profile" />
   );
 };
 
-export default LandingProtect;
+export default IsLoggedProfileUserTwo;

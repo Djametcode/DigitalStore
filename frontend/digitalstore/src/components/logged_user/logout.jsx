@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LogOut = () => {
   const handleToken = () => {
@@ -8,7 +8,7 @@ const LogOut = () => {
     <div className="flex justify-start p-2 font-quick">
       <Link
         className=" bg-red-600 p-2 rounded-lg text-white/80"
-        to="/"
+        to="/profile"
         onClick={handleToken}
       >
         Log Out
