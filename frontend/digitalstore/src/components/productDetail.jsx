@@ -12,6 +12,7 @@ const DescriptionProduct = ({
   warna,
   url,
 }) => {
+  const priceFormat = price.toLocaleString("ID", {style:"currency", currency:"IDR"});
   return (
     <div className="card p-4 bg-base-100 shadow-xl">
       <figure className=" rounded-2xl p-4">
@@ -21,7 +22,7 @@ const DescriptionProduct = ({
         <div className=" bg-base-200 p-5 -translate-y-4 rounded-lg">
           <h2 className="card-title">{title}</h2>
           <p>{description}</p>
-          <p>Rp. {price}</p>
+          <p>{priceFormat}</p>
           <div>
             <p>stock : {quantity}</p>
           </div>

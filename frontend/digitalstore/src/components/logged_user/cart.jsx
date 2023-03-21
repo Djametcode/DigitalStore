@@ -5,55 +5,12 @@ import NavPostingan from "./nav_postingan";
 import myCart from "../my_cart/my_cart";
 import cart from "../data_checkout";
 import { Navigate, useNavigate } from "react-router-dom";
-// const ImageCart = ({ data }) => {
-//   const urls = data[0];
-//   const { url } = urls;
-
-//   return <img className=" rounded-2xl w-28 h-28" src={url} alt="" srcset="" />;
-// };
-
-// const ProductsCart = ({ data }) => {
-//   console.log(data);
-//   const [title, setTitle] = useState([data.product.title]);
-//   const [image, setImage] = useState(data.product.images);
-//   return (
-//     <div className=" bg-base-300 m-3 p-4 rounded-xl">
-//       <div className=" flex p-3">
-//         <div className=" flex flex-col justify-start p-2">
-//           <input type="checkbox" class="checkbox" />
-//         </div>
-//         <div className=" p-2">
-//           <ImageCart data={image} />
-//         </div>
-//         <div className=" p-2 font-quick">
-//           <p>{title}</p>
-//           <p className=" text-sm">variasi : {data.product.color}</p>
-//           <p className=" text-sm">Rp. {data.product.price}</p>
-//           <p className=" text-sm">Jumlah : {data.product.quantity}</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// const MyCart = ({ total, item }) => {
-//   const result = item.map((items) => <ProductsCart key={items} data={items} />);
-//   return <div>{result}</div>;
-// };
 
 const token = localStorage.getItem("token");
 const config = {
   headers: {
     authorization: `Bearer ${token}`,
   },
-};
-
-const PriceToPay = ({ total }) => {
-  return (
-    <div>
-      <p>Total yang harus di bayar : {total} </p>
-    </div>
-  );
 };
 
 const CheckoutItem = () => {
@@ -109,26 +66,6 @@ const Cart = () => {
   const priceref = useRef();
 
   const [price, setPrice] = useState();
-
-  // const [total, setTotal] = useState();
-  // const [product, setProduct] = useState([]);
-  // const getALlUseCart = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       "https://breakable-outfit-bear.cyclic.app/cart",
-  //       config
-  //     );
-  //     const item = await response.data;
-  //     const { cartTotal, products, orderby } = item;
-  //     setTotal(cartTotal);
-  //     setProduct(products);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getALlUseCart();
-  // }, []);
   return (
     <div>
       <div className=" sticky top-0">
@@ -142,9 +79,9 @@ const Cart = () => {
               <div className=" flex flex-col justify-start p-2">
                 <input type="checkbox" class="checkbox" />
               </div>
-              <div className=" p-2">
+              <div className=" flex flex-col justify-center p-2">
                 <img
-                  className=" rounded-2xl w-28 h-28"
+                  className=" rounded-2xl w-40 h-28"
                   src={items.image}
                   alt=""
                   srcset=""

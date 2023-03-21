@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Extends = ({ data }) => {
   const { title, price, images, _id } = data;
+  const priceFormat = price.toLocaleString("ID", {style:"currency", currency:"IDR"});
   const {url} = images
   const navigate = useNavigate();
   //   console.log(images);
@@ -21,12 +22,12 @@ const Extends = ({ data }) => {
       </div>
       
       <div>
-      <img className=" w-44 h-44 rounded-lg" src={url} alt="img" />
+      <img className=" w-44 h-32 rounded-lg" src={url} alt="img" />
       </div>
 
       <div className=" bg-base-100 p-2 rounded-lg flex flex-col text-left pl-3 text-sm">
         <p>{title}</p>
-        <p>Rp. {price}</p>
+        <p>{priceFormat}</p>
       </div>
     </div>
   );
