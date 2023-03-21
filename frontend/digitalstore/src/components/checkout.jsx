@@ -27,17 +27,6 @@ const CheckOut = ({ color, url, title, price }) => {
   console.log(data);
 
   const addChart = () => {
-    // try {
-    //   const response = await axios.post(
-    //     "https://breakable-outfit-bear.cyclic.app/cart",
-    //     data,
-    //     config
-    //   );
-    //   const item = response.data;
-    //   await navigate("/cart");
-    // } catch (error) {
-    //   console.log(error);
-    // }
     myCart.push(data);
     navigate("/cart");
   };
@@ -50,6 +39,7 @@ const CheckOut = ({ color, url, title, price }) => {
           name="color"
           id="color"
         >
+          <option>pilih warna</option>
           <option value={color}>{color}</option>
         </select>
         <input

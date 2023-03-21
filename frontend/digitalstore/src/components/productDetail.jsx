@@ -9,27 +9,16 @@ const DescriptionProduct = ({
   price,
   quantity,
   description,
-  data,
   warna,
   url,
 }) => {
-  const item = data[0];
-  const result = data.map((item) => (
-    <figure>
-      <img
-        className=" w-72  rounded-xl"
-        key={data._id}
-        src={item.url}
-        alt=""
-        srcset=""
-      />
-    </figure>
-  ));
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <div className=" pt-6">{result}</div>
+    <div className="card p-4 bg-base-100 shadow-xl">
+      <figure className=" rounded-2xl p-4">
+        <img className=" w-52 rounded-xl" src={url} alt="" srcset="" />
+      </figure>
       <div className="card-body">
-        <div className=" bg-base-200 p-5 rounded-lg">
+        <div className=" bg-base-200 p-5 -translate-y-4 rounded-lg">
           <h2 className="card-title">{title}</h2>
           <p>{description}</p>
           <p>Rp. {price}</p>
@@ -41,7 +30,6 @@ const DescriptionProduct = ({
           <CheckOut
             color={warna}
             stock={quantity}
-            urls={item}
             title={title}
             price={price}
             url={url}
@@ -54,12 +42,10 @@ const DescriptionProduct = ({
 
 const ProductDetail = () => {
   const id = localStorage.getItem("id_product");
-  const [title, setTitle] = useState();
-  const [price, setPrice] = useState();
-  const [quantity, setQuantity] = useState();
-  const [images, setImages] = useState([]);
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [quantity, setQuantity] = useState('');
   const [description, setDesc] = useState("");
-  const [Ratings, setRatings] = useState();
   const [colors, setcolor] = useState("");
   const [url, setUrl] = useState("");
 
@@ -68,19 +54,17 @@ const ProductDetail = () => {
       `https://breakable-outfit-bear.cyclic.app/products//get-product/${id}`
     );
     const item = response.data;
-    console.log(item);
     const { title, price, quantity, images, description, ratings, color } =
       item;
-    console.log(color);
-    const test = images[0];
-    const { url } = test;
+      console.log(item)
+
+      const {url} = images;
+      console.log(url)
     setUrl(url);
     setTitle(title);
     setPrice(price);
-    setImages(images);
     setQuantity(quantity);
     setDesc(description);
-    setRatings(ratings);
     setcolor(color);
   };
 
@@ -88,18 +72,17 @@ const ProductDetail = () => {
     getSpesifictProduct();
   }, []);
   return (
-    <div className=" bg-base-200 pb-96">
+    <div className=" bg-base-200 pb-28">
       <div className=" sticky top-0 z-20">
         <HeaderProducts />
       </div>
 
-      <div className=" flex justify-center pt-3">
+      <div className=" p-3 flex justify-center pt-3">
         <DescriptionProduct
           title={title}
           price={price}
           quantity={quantity}
           description={description}
-          data={images}
           warna={colors}
           url={url}
         />
