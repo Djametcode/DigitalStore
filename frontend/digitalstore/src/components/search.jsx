@@ -74,20 +74,21 @@ const SearchProduct = () => {
   );
 };
 
-const ImageProducts = ({ data }) => {
-  const result = data.map((item) => (
-    <img className=" w-20 h-20 rounded-xl" src={item.url} alt="" srcset="" />
-  ));
-  return <div>{result}</div>;
-};
+// const ImageProducts = ({ data }) => {
+//   const result = data.map((item) => (
+//     <img className=" w-20 h-20 rounded-xl" src={item.url} alt="" srcset="" />
+//   ));
+//   return <div>{result}</div>;
+// };
 
 const ExtendsFilter = ({ data }) => {
   console.log(data);
+  const { images } = data;
+  const { url } = images;
+  console.log(url);
   return (
     <div className=" flex bg-base-100 p-3 rounded-lg">
-      <div>
-        <ImageProducts data={data.images} />
-      </div>
+      <img className=" w-20 h-20 rounded-xl" src={url} alt="" srcset="" />
       <div className=" flex p-3">
         <p>{data.title}</p>
       </div>
